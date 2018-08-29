@@ -41,12 +41,18 @@
        </div>
    </div>
     <div id="content" style="display: inline-block; text-align: left; width: 500px;"></div>
+    <div id="update_course" style="display: inline-block; background-color: yellow"><a class="update" style="color: green" href={% url "update_course" %}>Update Course</a></div>
 </p>
 {% endblock%}
 
 {% block scripts %}
     <script type="text/javascript" >
         $(document).ready(function() {
+            $("a.update").click(function(event){
+                //event.preventDefault();
+                console.log($(this).attr("href"));
+            });
+
             $("a.section, a.course").click(function(event) {
                 event.preventDefault();
                 var div = $(this).siblings("div");
